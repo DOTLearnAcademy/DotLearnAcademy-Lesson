@@ -1,0 +1,8 @@
+C:\Users\samar\OneDrive\Desktop\DOTLearn_Academy\DotLearnAcademy-Lesson\DotLearn.Lesson\obj\Debug\net8.0\DotLearn.Lesson.csproj.AssemblyReference.cache
+C:\Users\samar\OneDrive\Desktop\DOTLearn_Academy\DotLearnAcademy-Lesson\DotLearn.Lesson\obj\Debug\net8.0\DotLearn.Lesson.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\samar\OneDrive\Desktop\DOTLearn_Academy\DotLearnAcademy-Lesson\DotLearn.Lesson\obj\Debug\net8.0\DotLearn.Lesson.AssemblyInfoInputs.cache
+C:\Users\samar\OneDrive\Desktop\DOTLearn_Academy\DotLearnAcademy-Lesson\DotLearn.Lesson\obj\Debug\net8.0\DotLearn.Lesson.AssemblyInfo.cs
+C:\Users\samar\OneDrive\Desktop\DOTLearn_Academy\DotLearnAcademy-Lesson\DotLearn.Lesson\obj\Debug\net8.0\DotLearn.Lesson.csproj.CoreCompileInputs.cache
+C:\Users\samar\OneDrive\Desktop\DOTLearn_Academy\DotLearnAcademy-Lesson\DotLearn.Lesson\obj\Debug\net8.0\DotLearn.Lesson.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\samar\OneDrive\Desktop\DOTLearn_Academy\DotLearnAcademy-Lesson\DotLearn.Lesson\obj\Debug\net8.0\DotLearn.Lesson.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\samar\OneDrive\Desktop\DOTLearn_Academy\DotLearnAcademy-Lesson\DotLearn.Lesson\obj\Debug\net8.0\DotLearn.Lesson.sourcelink.json
