@@ -19,5 +19,6 @@ public enum ContentType
 {
     Video = 0,
     PDF = 1,
-    Text = 2
+    Text = 2,
+    Quiz = 3
 }

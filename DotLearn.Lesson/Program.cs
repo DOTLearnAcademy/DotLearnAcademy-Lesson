@@ -26,7 +26,7 @@ if (!builder.Environment.IsDevelopment())
 
 var connStr = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<LessonDbContext>(options =>
-    options.UseSqlServer(connStr));
+    options.UseSqlServer(connStr, sqlOptions => sqlOptions.EnableRetryOnFailure()));
 
 builder.Services.AddHealthChecks().AddSqlServer(connStr, name: "sqlserver");
 
