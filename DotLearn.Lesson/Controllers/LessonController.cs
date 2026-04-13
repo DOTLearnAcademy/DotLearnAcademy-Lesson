@@ -16,8 +16,8 @@ public class LessonController : ControllerBase
         _lessonService = lessonService;
     }
 
-    // GET /api/courses/{courseId}/lessons
-    [HttpGet("api/courses/{courseId}/lessons")]
+    // GET /api/lessons/course/{courseId}
+    [HttpGet("api/lessons/course/{courseId}")]
     [AllowAnonymous]
     public async Task<IActionResult> GetByCourse(Guid courseId)
     {
@@ -38,8 +38,8 @@ public class LessonController : ControllerBase
         return Ok(lesson);
     }
 
-    // POST /api/courses/{courseId}/lessons
-    [HttpPost("api/courses/{courseId}/lessons")]
+    // POST /api/lessons/course/{courseId}
+    [HttpPost("api/lessons/course/{courseId}")]
     [Authorize(Roles = "Instructor,Admin")]
     public async Task<IActionResult> Create(
         Guid courseId, [FromBody] CreateLessonRequestDto request)

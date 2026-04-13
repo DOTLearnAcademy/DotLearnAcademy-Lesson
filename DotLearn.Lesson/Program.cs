@@ -2,9 +2,7 @@ using DotLearn.Lesson.Data;
 using DotLearn.Lesson.Middleware;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
-using Amazon;
 using Amazon.S3;
-using Kralizek.Extensions.Configuration;
 using DotLearn.Lesson.Repositories;
 using DotLearn.Lesson.Services;
 
@@ -20,7 +18,7 @@ builder.Host.UseSerilog();
 // AWS Secrets Manager (Only in non-Development environments)
 if (!builder.Environment.IsDevelopment())
 {
-    // builder.Configuration.AddSecretsManager(region: RegionEndpoint.APSoutheast2);
+    // // builder.Configuration.AddSecretsManager(region: Amazon.RegionEndpoint.APSoutheast2);
 }
 
 var connStr = builder.Configuration.GetConnectionString("DefaultConnection");
@@ -31,7 +29,7 @@ builder.Services.AddHealthChecks().AddSqlServer(connStr, name: "sqlserver");
 
 builder.Services.AddDefaultAWSOptions(new Amazon.Extensions.NETCore.Setup.AWSOptions
 {
-    Region = RegionEndpoint.APSoutheast2
+    Region = Amazon.RegionEndpoint.APSoutheast2
 });
 builder.Services.AddAWSService<IAmazonS3>();
 
@@ -83,3 +81,5 @@ app.MapControllers();
 app.MapHealthChecks("/health");
 
 app.Run();
+
+
