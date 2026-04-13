@@ -101,7 +101,7 @@ public class LessonService : ILessonService
     {
         var lesson = await GetOrThrow(lessonId);
         var bucket = _config["AWS:VideosBucket"] ?? "dotlearn-videos-dev";
-        var key = $"lessons/{lessonId}/{Guid.NewGuid()}.mp4";
+        var key = $"lessons/{lessonId}/video.mp4";
 
         var presignRequest = new GetPreSignedUrlRequest
         {
