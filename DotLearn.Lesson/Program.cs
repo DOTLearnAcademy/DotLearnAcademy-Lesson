@@ -2,6 +2,7 @@ using DotLearn.Lesson.Data;
 using DotLearn.Lesson.Middleware;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
+using System.Security.Claims;
 using Amazon.S3;
 using DotLearn.Lesson.Repositories;
 using DotLearn.Lesson.Services;
@@ -44,19 +45,24 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 // Authentication & Authorization — JWT Bearer
-var jwtKey = builder.Configuration["Jwt:Secret"] ?? "placeholder-key-32-chars-minimum!";
-var jwtIssuer = "dotlearn-auth";
+var jwksUri = builder.Configuration["Auth:JwksUri"];
+var authority = jwksUri?.Replace("/.well-known/jwks.json", "");
+
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
+        options.Authority = authority;
+        options.RequireHttpsMetadata = false;
+
         options.TokenValidationParameters = new TokenValidationParameters
         {
-            ValidateIssuerSigningKey = true,
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey)),
             ValidateIssuer = true,
-            ValidIssuer = jwtIssuer,
+            ValidIssuer = "dotlearn-auth",
             ValidateAudience = false,
-            ValidateLifetime = true
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            NameClaimType = "sub",
+            RoleClaimType = ClaimTypes.Role
         };
     });
 builder.Services.AddAuthorization();
